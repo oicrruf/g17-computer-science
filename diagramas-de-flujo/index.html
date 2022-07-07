@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costo del boleto</title>
+    <script defer src="js/scripts.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="cotizador">
+            <div class="field">
+                <label class="label">Numero de personas</label>
+                <div class="control">
+                    <input id="personas" class="input" type="text" placeholder="Ingresa numero de personas">
+                </div>
+            </div>
+            <label class="label">Día de asistencia</label>
+            <div class="select">
+                <select id="dia">
+                    <option>Lunes</option>
+                    <option>Martes</option>
+                    <option>Miercoles</option>
+                    <option>Jueves</option>
+                    <option>Viernes</option>
+                    <option>Sábado</option>
+                    <option>Domingo</option>
+                </select>
+            </div>
+            <button id="calcular-boton" class="button is-danger">Calcular precio</button>
+        </div>
+        <div id="total"></div>
+    </div>
+    
+</body>
+</html>
