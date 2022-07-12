@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agrega tus películas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script defer src="js/scripts.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Agrega tu película</h1>
+            <form id="peliculas-form" method="post"> 
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label><br/>
+                    <input class="form-control" type="text" name="nombre" id="nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="anio" class="form-label">Año</label><br/>
+                    <input class="form-control" type="text" name="anio" id="anio">
+                </div>
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto</label><br/>
+                    <input class="form-control" type="text" name="foto" id="foto">
+                </div>
+                <button type="submit" id="boton" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </body>
+</html>
