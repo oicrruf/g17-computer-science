@@ -23,8 +23,6 @@ function agregar(evt){
     evt.target.reset();
     //document.querySelector("#peliculas-form").reset()
 
-    //("Peliculas guardadas: "+peliculas.length;
-    //alert(`Peliculas guardadas: ${peliculas.length}`)
     dibujar();
 }
 
@@ -38,7 +36,9 @@ function dibujar(){
     
     for(let n in peliculas){
         console.log(peliculas[n]);
-        /*document.querySelector("#resultados").innerHTML += `<div class="col-4">
+        /*
+        //Forma 1: Concatenar
+        document.querySelector("#resultados").innerHTML += `<div class="col-4">
             <div class="card mb-4">
                 <img src="${peliculas[n].caratula}" class="card-img-top">
                 <div class="card-body">
@@ -48,6 +48,8 @@ function dibujar(){
             </div>
         </div>`;*/
 
+        /* 
+        //Forma 2:
         let col = document.createElement("div");
         col.classList.add("col-4");
 
@@ -77,6 +79,33 @@ function dibujar(){
 
         card.append(cardbody);
         col.append(card);
+
+        */
+
+        //Forma 3
+
+        let col = document.createElement("div");
+        col.classList.add("col-4");
+        
+        col.innerHTML=`<div class="card mb-4">
+            <img src="${peliculas[n].caratula}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">${peliculas[n].titulo}</h5>
+                <p class="card-text">${peliculas[n].fecha}</p>
+            </div>
+        </div>`
+
+
+        let button = document.createElement("button");
+        button.classList.add("btn");
+        button.innerHTML="Enviar";
+
+        button.addEventListener("click",function(){
+            alert("Hola mundo!");
+        })
+
+        col.append(button);        
+
 
         document.querySelector("#resultados").append(col);
 
