@@ -1,13 +1,23 @@
+let movies_array=[];
+
 const renderMovies = (data) => {
     let movies = data.results;
     movies.forEach((movie) => {
       let poster = `${IMG_PREFIX}${movie.poster_path}`;
-      let img_html= `<img src="${poster}" alt="${movie.title}">`
+      //let img_html= `<img src="${poster}" alt="${movie.title}">`
+
+      let div = document.createElement("div");
+      div.classList.add("col-3","mb-4");
+
       let img = document.createElement("img");
       //img.src=poster;
+      img.classList.add("img-fluid");
       img.setAttribute("src",poster);
       img.setAttribute("alt",movie.title)
-      document.querySelector("#popular").append(img);
+
+      div.append(img)
+
+      document.querySelector("#popular").append(div);
       //console.log(movie);
     })
   
@@ -16,5 +26,6 @@ const renderMovies = (data) => {
 fetch(`${URL}/movie/popular?api_key=${API_KEY}`)
   .then((response) => response.json())
   .then((data)=>{
+    movies_array = data.results;
     renderMovies(data);
 });
