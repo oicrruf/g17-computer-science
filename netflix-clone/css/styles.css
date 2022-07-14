@@ -13,8 +13,8 @@ body {
 
 #app {
   margin: auto;
-  width: 50vw;
-  min-width: 620px;
+  width: 60vw;
+  min-width: 700px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -74,9 +74,11 @@ body {
   justify-content: space-between;
 }
 .covers-containers > img {
-  width: 30%;
+  width: 23%;
   margin-bottom: 20px;
   border-radius: 4px;
+  margin-left:5px;
+  margin-right: 5px;
 }
 #categories-group {
   background-color: #000;
