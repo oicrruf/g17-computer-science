@@ -50,6 +50,7 @@ function dibujar(){
 
         /* 
         //Forma 2:
+
         let col = document.createElement("div");
         col.classList.add("col-4");
 
@@ -105,6 +106,9 @@ function dibujar(){
         })
 
         col.append(button);        
+
+        //forma 4:
+        // https://developer.mozilla.org/es/docs/Web/API/Element/insertAdjacentHTML
 
 
         document.querySelector("#resultados").append(col);

@@ -1,4 +1,6 @@
 const renderSelect = (data) => {
+
+  //aqui
   let select = document.querySelector("#categories");
   let { genres } = data;
 
@@ -14,6 +16,12 @@ const renderSelect = (data) => {
   });
 };
 
+
 fetch(`${URL}/genre/movie/list?api_key=${API_KEY}`)
   .then((response) => response.json())
   .then((data) => renderSelect(data));
+
+
+
+
+
