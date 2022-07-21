@@ -10,13 +10,10 @@ fetch("/js/elephants.json",{
 
 const buscar = (evt) =>{
     let nombre = evt.currentTarget.value;
-
     let filtrados = resultados.filter(function(resultado){
         return resultado.name.toLowerCase().includes(nombre.toLowerCase());
     });
-
     dibujar(filtrados);
-
 }
 
 const todos = () =>{
@@ -75,7 +72,7 @@ const dibujar = (elefantes) => {
             </div>
             <div class="card-content">
                 <p><b>${elefante.name}</b></p>
-                <p><i class="fa fa-gender"></i> ${elefante.sex}</p>
+                <p>🐘 ${elefante.sex}</p>
             </div>
         </div>`;
      
