@@ -28,11 +28,12 @@ fetch(`${URL}/genre/movie/list?api_key=${API_KEY}`)
     let genre_id = evt.target.value;
     sortByName();
 
+
     if(genre_id==""){
       movies=movies_array;
     }else{
       movies= movies_array.filter(function(movie){
-        return movie.genre_ids.includes(parseInt(genre_id));
+        return movie.genre_ids?.includes(parseInt(genre_id));
       });
     }
     

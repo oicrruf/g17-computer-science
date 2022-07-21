@@ -10,6 +10,7 @@ const renderResults = (results) => {
 
   content.appendChild(block);
 
+  //results.forEach(function(movie){
   results.forEach((movie) => {
     console.log(movie);
     block.insertAdjacentHTML(
@@ -21,16 +22,23 @@ const renderResults = (results) => {
     `
     );
   });
+
+
+
 };
 
 frmBuscar.addEventListener("submit", (event) => {
   event.preventDefault();
+  document.querySelector("#categories").value="";
 
   const { movieName } = event.target;
 
   fetch(`${URL}/search/multi?api_key=${API_KEY}&query=${movieName.value}`)
     .then((response) => response.json())
-    .then((data) => renderResults(data.results));
+    .then((data) => {
+      movies_array = data.results;
+      renderMovies(movies_array);
+    });
 });
 
 // let peticion = ['100 años de soledad', 'Spiderman', 'Thor', 'Mi villano favorito', 'Dr. Strange']

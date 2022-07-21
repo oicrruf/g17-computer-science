@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="css/styles.css"></link>
+        <script src="https://kit.fontawesome.com/cda7ff839c.js" crossorigin="anonymous"></script>
+        <script defer src="js/script.js"></script>
+    </head>
+    <body>
+        <section class="section">
+            <div clas="container">
+            <h1 id="titulo" data-sensei="Roberto" data-content="elefantes" class="is-size-2 has-text-weight-semibold">Elephants</h1>
+            <div class="my-5">
+                <div class="control has-icons-right">
+                    <input class="input is-rounded" autocomplete="off" type="text" id="busqueda" placeholder="Buscar">
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-search"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="tabs">
+                <ul>
+                  <li class="is-active"><a href="#" id="opcion-todos">Todos</a></li>
+                  <li><a href="#" id="opcion-hembras">Hembras</a></li>
+                  <li><a href="#" id="opcion-machos">Machos</a></li>
+                  <li><a href="#" id="opcion-reales">Reales</a></li>
+                  <li><a href="#" id="opcion-ficcion">De ficción</a></li>
+                </ul>
+              </div>
+            </div>
+            <div id="resultado" class="mt-5 columns is-multiline">
+            </div>
+        </section>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title" id="ficha-nombre">Nombre</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <div class="columns">
+                    <div class="column">
+                        <figure class="image">
+                            <img id="ficha-img" src="https://imagenes.elpais.com/resizer/RMLVjIzC2eqWAWR8PBNyUhhasWM=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/K7KAM4WLPJCQZMEMNZMT32A7AQ.jpg">
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <p><span id="dob"></span> - <span id="dod"></span></p>
+                        <p><b>Afiliacion:</b> <span id="ficha-affiliation"></span></p>
+                        <p><b>Género:</b> <span id="ficha-sex"></span></p>
+                        <p id="ficha-note"></p>
+                        <a href="#" class="button is-warning mt-4" target="_blank" id="ficha-button">Ir a la fecha</a>
+                    </div>
+                </div>
+              </section>
+            </div>
+          </div>
+    </body>
+</html>
