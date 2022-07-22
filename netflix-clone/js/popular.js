@@ -1,9 +1,37 @@
 let movies_array = [];
 let allFavorites = [];
+let favorites = JSON.parse(localStorage.getItem("@favorites"))
+  ? JSON.parse(localStorage.getItem("@favorites"))
+  : [];
+
+const favoritesDecoration = () => {
+  let content = document.querySelector("#popular");
+  console.log("LOCALSTORAGE", favorites);
+
+  Array.from(content.children).forEach((movie) => {
+    if (favorites.indexOf(movie.getAttribute("id")) !== -1) {
+      movie.children[0].classList.add("border", "border-danger", "border-5");
+    }
+  });
+};
+
+const removeFavorite = (id, favorites) => {
+  // console.log(favorites.indexOf(id))
+  // favorites.splice(favorites.indexOf(id), 1)
+  // allFavorites = favorites
+  // localStorage.setItem("@favorites", JSON.stringify(allFavorites));
+};
 
 const addFavorite = (element) => {
   let id = element.currentTarget.getAttribute("id");
-  allFavorites.push(id);
+  let parseFavorite = favorites;
+  
+
+  parseFavorite.push(id);
+  allFavorites = parseFavorite;
+
+  removeFavorite(id, parseFavorite);
+
   localStorage.setItem("@favorites", JSON.stringify(allFavorites));
   element.target.classList.add("border", "border-danger", "border-5");
 };
@@ -32,6 +60,8 @@ const renderMovies = (movies) => {
     document.querySelector("#popular").append(div);
     //console.log(movie);
   });
+
+  favoritesDecoration();
 };
 
 //function sortByName(){
